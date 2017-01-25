@@ -2,7 +2,7 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Split Page Demo</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -17,7 +17,7 @@
     }
 
     body {
-      width: 100vh;
+      width: 100vw;
     }
 
     .split-container {
@@ -113,11 +113,15 @@
     @media screen and (max-width: 800px) {
       .split-container {
         flex-direction: column;
+        height: 100vh;
+        overflow: hidden;
+        width: 100vw;
       }
 
       .split-side:first-child {
         border-right: none;
       }
+
 
       .split-side .split-content {
         height: 100%;
