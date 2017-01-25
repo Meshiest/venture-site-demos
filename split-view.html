@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Split Page Demo</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <style type="text/css">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      outline: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vh;
+    }
+
+    .split-container {
+      align-items: stretch;
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      justify-content: center;
+      overflow: hidden;
+      width: 100vw;
+    }
+
+    .split-side {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: center;
+      position: relative;
+      transition: all 0.5s;
+    }
+
+    .split-side:hover {
+      flex-grow: 1.4;
+    }
+
+    .split-side .split-content {
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      height: 150px;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+    }
+
+    .split-side h2 {
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      font-size: 40px;
+      font-weight: 400;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .split-side .description {
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 200;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+      width: 40vw;
+    }
+
+    .split-side:first-child {
+      border-right: 4px solid white;
+    }
+
+    .split-side img {
+      height: 100%;
+      left: 0;
+      object-fit: cover;
+      object-position: center center;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -3;
+    }
+
+    .split-side .peek-button {
+      background-color: rgba(255, 255, 255, 0);
+      border: thin solid white;
+      border-radius: 50%;
+      color: #fff;
+      font-family: 'Material Icons';
+      font-size: 20px;
+      margin: 4px;
+      opacity: 0;
+      padding: 8px;
+      text-decoration: none;
+      transition: all 0.5s;
+    }
+
+    .split-side:hover .peek-button {
+      opacity: 1;
+    }
+
+    .split-side .peek-button:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: scale(1.2);
+    }
+
+    @media screen and (max-width: 800px) {
+      .split-container {
+        flex-direction: column;
+      }
+
+      .split-side .split-content {
+        height: 100%;
+      }
+
+      .split-side .description {
+        width: 100vw;
+      }
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="split-container">
+      <div class="split-side" onclick="">
+        <div class="split-content">
+          <h2>Technology</h2>
+          <section class="description">
+            We offer exceptional skills in identifying emerging trends and creatively connecting people to build business solutions.
+          </section>
+          <a class="peek-button" href="#">arrow_forward</a>
+        </div>
+        <img src="split-tech-bg.jpg">
+      </div>
+      <div class="split-side" onclick="">
+        <div class="split-content">
+          <h2>Life Sciences</h2>
+          <section class="description">
+            We specialize in business development, product strategy, marketing, national accounts, and channel management for life science companies.
+          </section>
+          <a class="peek-button" href="#">arrow_forward</a>
+        </div>
+        <img src="split-life-bg.jpg">
+      </div>
+    </div>
+  </body>
+</html>
